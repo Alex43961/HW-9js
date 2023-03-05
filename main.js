@@ -32,9 +32,9 @@ const group = [
 	},
  ];
 
- group[0].pocket.left.concat(group[0].pocket.right)
+//! group[0].pocket.left.concat(group[0].pocket.right)
 
- group.includes('includes')
+//! group.includes('includes')
 
 
 
@@ -64,32 +64,24 @@ const group = [
 //console.log(group.indexOf("lighter"));
 //let found = group.find(e =>e.name === "lighter");
 //console.log(found);
-
+let age = 0;
 let sumAge = group.reduce(
 	(accumulator, currentValue) => accumulator + currentValue.age,
 	0
 );
+console.log(sumAge);
 
-
-let age = 0;
-for(let i = 0; i < group.length; i++) {
-	return age += group[i].age;
+function addAge(group){
+	for(let i = 0; i < group.length; i++) {
+	 age += group[i].age;
 }
-
-group.forEach(element => age += element.age);
-group.forEach((element) => {
-	return age += element.age
-});
-
-group.map(element => age += element.age)
-
-(a,b, c) => {
-	//
-	return a+b+c;
+return age;
 }
+console.log(addAge(group));
 
-function (a,b,c) {
-	//
-	this
-	return a+b+c;
-}
+
+//group.forEach(element => age += element.age);
+
+
+//group.map(element => age += element.age)
+
