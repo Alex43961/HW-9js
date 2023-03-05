@@ -13,7 +13,7 @@ const group = [
 	  },
 	},
 	{
-	  firstName: "John",
+	  firstName: "Bob",
 	  age: 23,
 	  skills: ["HTML", "CSS"],
 	  pocket: {
@@ -22,7 +22,7 @@ const group = [
 	  },
 	},
 	{
-	  firstName: "John",
+	  firstName: "Jack",
 	  age: 23,
 	  skills: ["JS"],
 	  pocket: {
@@ -84,4 +84,62 @@ console.log(addAge(group));
 
 
 //group.map(element => age += element.age)
+//function knowsJS(group) {
+//	let knowledge = [];
+//	for(let i =0; i < group.length; i++){
+//		let studentJS = group[i].skills 
+//		let studentsName = group[i].firstName
+//		if(group[i].skills == "JS") {
+//					knowledge += studentsName; 
+//				}
+//		console.log(studentJS);
+//		for(let n = 0; n < studentJS; n++) {
+//			if(studentJS[n] == "JS") {
+//				console.log(studentJS);
+//				knowledge += studentsName; 
+//			}
+			
+//		}
+//	}
+//	console.log([knowledge] ,knowledge); ;
+//}
+//console.log(knowsJS(group));
 
+
+//let results = arr.filter(function(item, index, group) {
+	//let knowsJS = [];
+	//let item = group[index];
+	//if(item.skills == "JS"){
+	//	knowsJS.concat(item.firstName);
+	//}
+	//return item.skills == "JS";
+ //});
+ //console.log(results(group));
+ function dkkej(arr){
+	
+		let usersJS = arr.filter(item => item.skills == "JS" );
+ return usersJS;
+ }
+	console.log(dkkej(group));
+function popular(par) {
+	let n = 0;
+	for(let i = 0; i <par.skills.length; i++) {
+		if(group.skills[i] == "JS"){
+			n += 1;
+		}
+		return n;
+	}
+}
+	console.log(popular(group));
+ 
+ 
+
+// let usersKnowsJS = group.filter (function(group) {
+//	return group.skills[i] == "JS";
+// });
+
+let usersKnowsJS = group.filter((element, index) => {
+	return element.skills == "JS";
+ } )
+ console.log(usersKnowsJS);
+// console.log(group.includes(group[0].skills = "CSS"));
