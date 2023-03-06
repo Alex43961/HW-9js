@@ -4,33 +4,33 @@
 // 3) Divide group on three groups : "Who knows JS" , "Who dont's know JS" , "Who knows CSS"
 const group = [
 	{
-	  firstName: "John",
-	  age: 23,
-	  skills: ["HTML", "CSS", "JS"],
-	  pocket: {
-		 left: ["keys", "food"],
-		 right: ["docs", "snikers"],
-	  },
+		firstName: "John",
+		age: 23,
+		skills: ["HTML", "CSS", "JS"],
+		pocket: {
+			left: ["keys", "food"],
+			right: ["docs", "snikers"],
+		},
 	},
 	{
-	  firstName: "Bob",
-	  age: 23,
-	  skills: ["HTML", "CSS"],
-	  pocket: {
-		 left: ["docs", "food"],
-		 right: ["keys", "snikers"],
-	  },
+		firstName: "Dave",
+		age: 23,
+		skills: ["HTML", "CSS"],
+		pocket: {
+			left: ["docs", "food"],
+			right: ["keys", "snikers"],
+		},
 	},
 	{
-	  firstName: "Jack",
-	  age: 23,
-	  skills: ["JS"],
-	  pocket: {
-		 left: ["lighter", "cigarettes"],
-		 right: ["rat", "cheese"],
-	  },
+		firstName: "Jack",
+		age: 23,
+		skills: ["JS"],
+		pocket: {
+			left: ["lighter", "cigarettes"],
+			right: ["rat", "cheese"],
+		},
 	},
- ];
+];
 
 //! group[0].pocket.left.concat(group[0].pocket.right)
 
@@ -64,6 +64,9 @@ const group = [
 //console.log(group.indexOf("lighter"));
 //let found = group.find(e =>e.name === "lighter");
 //console.log(found);
+//! *************    2     ************
+
+//! Рабочая
 let age = 0;
 let sumAge = group.reduce(
 	(accumulator, currentValue) => accumulator + currentValue.age,
@@ -71,19 +74,18 @@ let sumAge = group.reduce(
 );
 console.log(sumAge);
 
-function addAge(group){
-	for(let i = 0; i < group.length; i++) {
-	 age += group[i].age;
-}
-return age;
+//! Рабочая
+
+function addAge(group) {
+	for (let i = 0; i < group.length; i++) {
+		age += group[i].age;
+	}
+	return age;
 }
 console.log(addAge(group));
 
+//! *************************************
 
-//group.forEach(element => age += element.age);
-
-
-//group.map(element => age += element.age)
 //function knowsJS(group) {
 //	let knowledge = [];
 //	for(let i =0; i < group.length; i++){
@@ -98,7 +100,7 @@ console.log(addAge(group));
 //				console.log(studentJS);
 //				knowledge += studentsName; 
 //			}
-			
+
 //		}
 //	}
 //	console.log([knowledge] ,knowledge); ;
@@ -107,39 +109,88 @@ console.log(addAge(group));
 
 
 //let results = arr.filter(function(item, index, group) {
-	//let knowsJS = [];
-	//let item = group[index];
-	//if(item.skills == "JS"){
-	//	knowsJS.concat(item.firstName);
-	//}
-	//return item.skills == "JS";
- //});
- //console.log(results(group));
- function dkkej(arr){
-	
-		let usersJS = arr.filter(item => item.skills == "JS" );
- return usersJS;
- }
-	console.log(dkkej(group));
-function popular(par) {
-	let n = 0;
-	for(let i = 0; i <par.skills.length; i++) {
-		if(group.skills[i] == "JS"){
-			n += 1;
-		}
-		return n;
-	}
-}
-	console.log(popular(group));
- 
- 
+//let knowsJS = [];
+//let item = group[index];
+//if(item.skills == "JS"){
+//	knowsJS.concat(item.firstName);
+//}
+//return item.skills == "JS";
+//});
+//console.log(results(group));
+
+
+
+
+// function dkkej(arr){
+
+//		let usersJS = arr.filter(item => item.skills == "JS" );
+// return usersJS;
+// }
+//	console.log(dkkej(group));
+//function popular(par) {
+//	let n = 0;
+//	for(let i = 0; i <par.skills.length; i++) {
+//		if(group.skills[i] == "JS"){
+//			n += 1;
+//		}
+//		return n;
+//	}
+//}
+//	console.log(popular(group));
+
+
 
 // let usersKnowsJS = group.filter (function(group) {
 //	return group.skills[i] == "JS";
 // });
 
-let usersKnowsJS = group.filter((element, index) => {
-	return element.skills == "JS";
- } )
- console.log(usersKnowsJS);
-// console.log(group.includes(group[0].skills = "CSS"));
+//?
+
+//console.log(group.includes(group[2].skills = "CSS"));
+//let anotherGroup = group.flat(Infinity);
+//console.log(anotherGroup);
+
+//! *****************     3       *********************
+//!   Рабочая
+let result = group.map(({ firstName, skills }) => `${firstName}, ${skills}`)
+console.log(result);
+let knowsJS = '';
+let doNotknowsJS = '';
+for (let i = 0; i < result.length; i++) {
+	if (result[i].indexOf("JS") >= 0) {
+		knowsJS += result[i].slice(0, 4) + "  knows JS, ";
+	} else {
+		doNotknowsJS += result[i].slice(0, 4) + " don't knows JS, ";
+	}
+
+}
+
+let knowsCSS = '';
+for (let i = 0; i < result.length; i++) {
+	if (result[i].indexOf("CSS") >= 0) {
+		knowsCSS += result[i].slice(0, 4) + "  knows CSS, ";
+	}
+
+}
+console.log(knowsJS);
+console.log(doNotknowsJS);
+console.log(knowsCSS);
+
+//! ********************************************************
+//let whoKnowsJS = [];
+//for (let i = 0; i < result.length; i++) {
+//	for (let j = 1; j < result[i].length; j++) {
+//		if (result[i][j] = "JS") {
+//			whoKnowsJS[i] = result[i][0];
+//		}
+//	}
+
+//}
+//console.log(whoKnowsJS);
+
+//let usersKnowsJS = result.filter((element, i) => {
+//	console.log(element[i] == "JS")
+//})
+//console.log(usersKnowsJS);
+//console.log(Array.isArray(result));
+//console.log(result.length);
