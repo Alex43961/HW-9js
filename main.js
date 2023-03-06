@@ -155,12 +155,12 @@ console.log(addAge(group));
 let result = group.map(({ firstName, skills }) => `${firstName}, ${skills}`)
 console.log(result);
 let knowsJS = '';
-let doNotknowsJS = '';
+let doesNotKnowJS = '';
 for (let i = 0; i < result.length; i++) {
 	if (result[i].indexOf("JS") >= 0) {
 		knowsJS += result[i].slice(0, 4) + "  knows JS, ";
 	} else {
-		doNotknowsJS += result[i].slice(0, 4) + " don't knows JS, ";
+		doesNotKnowJS += result[i].slice(0, 4) + " doesn't know JS, ";
 	}
 
 }
@@ -173,7 +173,7 @@ for (let i = 0; i < result.length; i++) {
 
 }
 console.log(knowsJS);
-console.log(doNotknowsJS);
+console.log(doesNotKnowJS);
 console.log(knowsCSS);
 
 //! ********************************************************
