@@ -194,3 +194,25 @@ console.log(knowsCSS);
 //console.log(usersKnowsJS);
 //console.log(Array.isArray(result));
 //console.log(result.length);
+
+
+//let whereIsLighter =group.map(({firstName, left, right})=>`${firstName} + ${left} + ${right}`);
+//console.log(whereIsLighter);
+//! ******************     1          *****************
+let leftPocket = [];
+for (let i = 0; i < group.length; i++) {
+	leftPocket = leftPocket.concat(group[i].pocket.left.slice(0, 2));
+}
+console.log(leftPocket);
+let rightPocket = [];
+for (let i = 0; i < group.length; i++) {
+	rightPocket = rightPocket.concat(group[i].pocket.right.slice(0, 2));
+}
+console.log(rightPocket);
+let bigPocket = leftPocket.concat(rightPocket);
+console.log(bigPocket);
+for (let i = 0; i < bigPocket.length; i++) {
+	if (bigPocket[i].indexOf("lighter") >= 0) {
+		console.log("good sheet");
+	}
+}
